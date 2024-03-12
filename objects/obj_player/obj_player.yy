@@ -34,9 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_idlePedrinho",
-    "path":"sprites/spr_idlePedrinho/spr_idlePedrinho.yy",
+    "name":"spr_idle_pedrinho",
+    "path":"sprites/spr_idle_pedrinho/spr_idle_pedrinho.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_base_pedrinho",
+    "path":"sprites/spr_base_pedrinho/spr_base_pedrinho.yy",
+  },
   "visible":true,
 }

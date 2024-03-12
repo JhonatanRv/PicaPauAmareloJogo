@@ -2,29 +2,90 @@
 // You can write your code in this editor
 
 // Initializing variables
-var right, left, jump, attack;
-var ground = place_meeting(x, y +1, obj_block);
+var _right, _left, _jump, _attack;
+var _ground = place_meeting(x, y +1, obj_block);
 
 
 
 gamepad_set_axis_deadzone(0, 0.6); //Defines the deadZone of the gamepad axis 
-right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0);
-left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0);
-jump = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1);
+_right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0);
+_left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0);
+_jump = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1);
 
 
 // Movementation code
-velh = (right - left) < max_velh;
+velh = (_right - _left) * max_velh;
 
 
 // Aplying gravity
-if(!ground && velv < max_velv * 2){
+if(!_ground && velv < max_velv * 2){
 	velv += GRAVITY * mass;
 	
 }
-else{ // Making the jump if the player is on the ground
-	if (jump){
-		velv = -max_velv;
+
+
+//Starting the state machine
+switch(state){
+
+
+	case "stopped":
+	{
+		sprite_index = spr_idle_pedrinho;
+		
+		//Switch state condition
+		//Moving
+		if (_right || _left){
+			state = "moving"
+		}
+		else if(_jump){
+			state = "jumping";
+			velv = -max_velv;
+		}
+		
+		break;
 	}
+	
+	case "moving":
+	{
+		//Moving state behavior
+		sprite_index = spr_run_pedrinho;
+		
+		//Switch state condition
+		//Stopped
+		if(abs(velh) < .1){
+			state = "stopped";
+			velh = 0;
+		}
+		else if(_jump){
+			state = "jumping";
+			velv = -max_velv;
+		}
+		
+		
+		break;
+	}
+
+	case "jumping":
+	{
+		//Falling
+		if(velv > 0){
+			sprite_index = spr_fall_pedrinho;
+		}
+		else{ //Jumping
+			sprite_index = spr_jump_pedrinho;
+			//Ensuring the animation does not repeat
+			if(image_index >= image_number - 1){
+				image_index = image_number - 1;
+			}
+		}
+		
+		//Switch state condition
+		if(_ground){
+			state = "stopped";
+		}
+		
+		break;
+	}
+
 
 }
