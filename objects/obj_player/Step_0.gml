@@ -37,7 +37,7 @@ switch(state){
 		if (_right || _left){
 			state = "moving"
 		}
-		else if(_jump){
+		else if(_jump && _ground){
 			state = "jumping";
 			velv = -max_velv;
 		}
@@ -56,7 +56,7 @@ switch(state){
 			state = "stopped";
 			velh = 0;
 		}
-		else if(_jump){
+		else if(_jump && _ground){
 			state = "jumping";
 			velv = -max_velv;
 		}
