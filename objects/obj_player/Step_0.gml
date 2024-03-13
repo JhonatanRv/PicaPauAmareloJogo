@@ -10,7 +10,8 @@ var _ground = place_meeting(x, y +1, obj_block);
 gamepad_set_axis_deadzone(0, 0.6); //Defines the deadZone of the gamepad axis 
 _right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0);
 _left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0);
-_jump = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1);
+_jump = keyboard_check_pressed(ord("K")) || gamepad_button_check_pressed(0, gp_face1);
+_attack = keyboard_check_pressed(ord("J")) || gamepad_button_check_pressed(0, gp_face3);
 
 
 // Movementation code
@@ -36,10 +37,16 @@ switch(state){
 		//Moving
 		if (_right || _left){
 			state = "moving"
-		}
-		else if(_jump && _ground){
+		}//Jumping
+		else if(_jump || velv != 0){
 			state = "jumping";
-			velv = -max_velv;
+			velv = (-max_velv * _jump);
+			image_index = 0;
+		}//Attacking
+		else if(_attack){
+			state = "attacking";
+			velh = 0;
+			image_index = 0;
 		}
 		
 		break;
@@ -55,10 +62,16 @@ switch(state){
 		if(abs(velh) < .1){
 			state = "stopped";
 			velh = 0;
-		}
-		else if(_jump && _ground){
+		}//Jumping
+		else if(_jump || velv != 0){
 			state = "jumping";
-			velv = -max_velv;
+			velv = (-max_velv * _jump);
+			image_index = 0;
+		}//Attacking
+		else if(_attack){
+			state = "attacking";
+			velh = 0;
+			image_index = 0;
 		}
 		
 		
@@ -73,6 +86,7 @@ switch(state){
 		}
 		else{ //Jumping
 			sprite_index = spr_jump_pedrinho;
+			image_index = 0;
 			//Ensuring the animation does not repeat
 			if(image_index >= image_number - 1){
 				image_index = image_number - 1;
@@ -80,12 +94,25 @@ switch(state){
 		}
 		
 		//Switch state condition
+		//Stopped
 		if(_ground){
 			state = "stopped";
 		}
 		
 		break;
 	}
-
+	
+	case "attacking":
+	{
+		velh = 0;
+		
+		sprite_index = spr_attack_pedrinho;
+		
+		if(image_index > image_number - 1){
+			state = "stopped";
+		}
+		
+		break;
+	}
 
 }

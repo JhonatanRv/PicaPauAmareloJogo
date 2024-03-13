@@ -9,3 +9,5 @@ current_life = max_life;
 
 max_velh = 3.5;
 max_velv = 8.5;
+
+show_state = true;

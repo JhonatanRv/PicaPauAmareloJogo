@@ -12,6 +12,8 @@ max_velv = 1;
 mass = 1;
 attack = 1;
 
+img_spd = 30;
+
 xscale = 1;
 
 show_state = false;

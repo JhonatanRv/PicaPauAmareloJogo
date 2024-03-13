@@ -17,6 +17,7 @@
     {"name":"Idle","order":1,"path":"folders/Sprites/Narizinho/Idle.yy",},
     {"name":"Pedrinho","order":1,"path":"folders/Sprites/Pedrinho.yy",},
     {"name":"air","order":3,"path":"folders/Sprites/Pedrinho/air.yy",},
+    {"name":"attack","order":4,"path":"folders/Sprites/Pedrinho/attack.yy",},
     {"name":"moving","order":1,"path":"folders/Sprites/Pedrinho/moving.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":6,"path":"folders/Timelines.yy",},
