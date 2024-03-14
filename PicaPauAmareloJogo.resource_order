@@ -28,5 +28,6 @@
     {"name":"Room1","order":1,"path":"rooms/Room1/Room1.yy",},
     {"name":"spr_base_pedrinho","order":2,"path":"sprites/spr_base_pedrinho/spr_base_pedrinho.yy",},
     {"name":"spr_fall_pedrinho","order":1,"path":"sprites/spr_fall_pedrinho/spr_fall_pedrinho.yy",},
+    {"name":"spr_sky","order":1,"path":"sprites/spr_sky/spr_sky.yy",},
   ],
 }

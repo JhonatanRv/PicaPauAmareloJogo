@@ -3,7 +3,7 @@
 
 // Initializing variables
 var _right, _left, _jump, _attack;
-var _ground = place_meeting(x, y +1, obj_block);
+var _ground = place_meeting(x, y + 1, obj_block);
 
 
 
