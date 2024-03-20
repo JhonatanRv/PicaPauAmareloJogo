@@ -34,9 +34,10 @@ switch(state){
 		sprite_index = spr_idle_pedrinho;
 		
 		//Switch state condition
-		//Moving
-		if (_right || _left){
-			state = "moving"
+		//Ansuring that character doesn't move if both buttons are pressed
+		if (_right && _left ){
+			state = "stopped";
+			velh = 0;
 		}//Jumping
 		else if(_jump || velv != 0){
 			state = "jumping";
@@ -47,7 +48,11 @@ switch(state){
 			state = "attacking";
 			velh = 0;
 			image_index = 0;
+		}//Moving
+		else if (_right || _left){
+			state = "moving"
 		}
+		
 		
 		break;
 	}
