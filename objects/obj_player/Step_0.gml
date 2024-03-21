@@ -113,8 +113,25 @@ switch(state){
 		
 		sprite_index = spr_attack_pedrinho;
 		
+			//Creating the damage object
+			if(image_index >= 0 && damage == noone && new_attack){
+				damage = instance_create_layer(x + sprite_width/2, (y - sprite_width + 4/2), layer, obj_damage);
+				damage.damage = attack;
+				damage.father = id;
+				new_attack = false;
+			}
+		
+		
+		
 		if(image_index > image_number - 1){
 			state = "stopped";
+			new_attack = true;
+			
+			//Destroying the damage instance
+			if(damage){
+				 instance_destroy(damage, false);
+				damage = noone;
+			}
 		}
 		
 		break;

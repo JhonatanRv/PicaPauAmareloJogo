@@ -11,3 +11,7 @@ max_velh = 3.5;
 max_velv = 8.5;
 
 show_state = true;
+
+damage = noone;
+
+new_attack = true;

@@ -25,7 +25,7 @@
   ],
   "name":"spr_attack_pedrinho",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"attack",
     "path":"folders/Sprites/Pedrinho/attack.yy",
@@ -83,7 +83,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":20,
+    "xorigin":16,
     "yorigin":64,
   },
   "swatchColours":null,

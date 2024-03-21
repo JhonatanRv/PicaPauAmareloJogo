@@ -34,7 +34,7 @@ switch(state){
 		if(sprite_index != spr_hurt_ghost){
 
 			image_index = 0;
-			current_life--;
+			//current_life--;
 		}
 		
 		sprite_index = spr_hurt_ghost;

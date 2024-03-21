@@ -30,11 +30,13 @@
   "ResourceOrderSettings":[
     {"name":"obj_block","order":2,"path":"objects/obj_block/obj_block.yy",},
     {"name":"obj_entity","order":1,"path":"objects/obj_entity/obj_entity.yy",},
+    {"name":"obj_damage","order":4,"path":"objects/obj_damage/obj_damage.yy",},
     {"name":"Room1","order":1,"path":"rooms/Room1/Room1.yy",},
+    {"name":"spr_attack_shot","order":1,"path":"sprites/spr_attack_shot/spr_attack_shot.yy",},
     {"name":"spr_base_pedrinho","order":2,"path":"sprites/spr_base_pedrinho/spr_base_pedrinho.yy",},
+    {"name":"spr_dead_ghost","order":2,"path":"sprites/spr_dead_ghost/spr_dead_ghost.yy",},
     {"name":"spr_fall_pedrinho","order":1,"path":"sprites/spr_fall_pedrinho/spr_fall_pedrinho.yy",},
     {"name":"spr_hurt_ghost","order":1,"path":"sprites/spr_hurt_ghost/spr_hurt_ghost.yy",},
     {"name":"spr_sky","order":1,"path":"sprites/spr_sky/spr_sky.yy",},
-    {"name":"spr_dead_ghost","order":2,"path":"sprites/spr_dead_ghost/spr_dead_ghost.yy",},
   ],
 }
