@@ -3,6 +3,6 @@
 
 damage = 0;
 shot_vel = 8;
-
+dir = 1;
 father = noone;
 

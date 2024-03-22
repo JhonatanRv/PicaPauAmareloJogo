@@ -5,7 +5,7 @@
 var col = instance_place(x, y, obj_entity);
 
 //making the shot fly to the right direction
-x += shot_vel;
+x += shot_vel * dir;
 
 
 
