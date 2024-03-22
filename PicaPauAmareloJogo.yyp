@@ -51,7 +51,7 @@
     {"id":{"name":"obj_entity","path":"objects/obj_entity/obj_entity.yy",},},
     {"id":{"name":"obj_ghost","path":"objects/obj_ghost/obj_ghost.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
-    {"id":{"name":"obj_damage","path":"objects/obj_damage/obj_damage.yy",},},
+    {"id":{"name":"obj_pedrinho_damage","path":"objects/obj_pedrinho_damage/obj_pedrinho_damage.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_init","path":"scripts/scr_init/scr_init.yy",},},
     {"id":{"name":"spr_alligator","path":"sprites/spr_alligator/spr_alligator.yy",},},

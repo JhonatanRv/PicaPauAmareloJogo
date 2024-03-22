@@ -6,24 +6,20 @@ var _right, _left, _jump, _attack;
 var _ground = place_meeting(x, y + 1, obj_block);
 
 
-
 gamepad_set_axis_deadzone(0, 0.6); //Defines the deadZone of the gamepad axis 
 _right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0);
 _left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0);
 _jump = keyboard_check_pressed(ord("K")) || gamepad_button_check_pressed(0, gp_face1);
 _attack = keyboard_check_pressed(ord("J")) || gamepad_button_check_pressed(0, gp_face3);
 
-
 // Movementation code
 velh = (_right - _left) * max_velh;
-
 
 // Aplying gravity
 if(!_ground && velv < max_velv * 2){
 	velv += GRAVITY * mass;
 	
 }
-
 
 //Starting the state machine
 switch(state){
@@ -113,33 +109,22 @@ switch(state){
 		
 		sprite_index = spr_attack_pedrinho;
 		
-		
-				//Creating the damage object
-				if(image_index >= 1 && damage == noone && new_attack){
-					damage = instance_create_layer(x + sprite_width /2, (y - sprite_height/2 - 8), layer, obj_damage);
-					damage.damage = attack;
-					damage.father = id;
-					damage.dir = image_xscale;
-					new_attack = false;
-				}
+			//Creating the damage object
+			if(image_index >= 1 && new_attack){
+				damage = instance_create_layer(x + sprite_width /2, (y - sprite_height/2 - 8), layer, obj_pedrinho_damage);
+				damage.damage = attack;
+				damage.father = id;
+				damage.dir = image_xscale;
+				new_attack = false;
+			}
 			
-			
-			
-			
-			
-			
-		
-	
-		
 			if(image_index > image_number - 1){
 				state = "stopped";
 				new_attack = true;
-			
+
 				//Destroying the damage instance
-				if(damage){
-					 instance_destroy(damage, false);
-					damage = noone;
-				}
+				
+				
 			}
 		
 		break;

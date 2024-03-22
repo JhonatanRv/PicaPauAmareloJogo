@@ -1,6 +1,8 @@
 /// @description Damage core code
 // You can write your code in this editor
 
+//Defines the scale of the sprite
+
 //col = colision
 var col = instance_place(x, y, obj_entity);
 

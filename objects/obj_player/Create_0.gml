@@ -15,3 +15,5 @@ show_state = true;
 damage = noone;
 
 new_attack = true;
+
+my_timer = 2000000;
