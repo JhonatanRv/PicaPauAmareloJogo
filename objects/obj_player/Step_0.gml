@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Initializing variables
-var _right, _left, _jump, _attack;
+var _right, _left, _jump, _attack, _dash;
 var _ground = place_meeting(x, y + 1, obj_block);
 
 
@@ -11,6 +11,7 @@ _right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0);
 _left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0);
 _jump = keyboard_check_pressed(ord("K")) || gamepad_button_check_pressed(0, gp_face1);
 _attack = keyboard_check_pressed(ord("J")) || gamepad_button_check_pressed(0, gp_face3);
+_dash = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face2);
 
 // Movementation code
 velh = (_right - _left) * max_velh;
@@ -24,7 +25,7 @@ if(!_ground && velv < max_velv * 2){
 //Starting the state machine
 switch(state){
 
-
+	#region stopped
 	case "stopped":
 	{
 		sprite_index = spr_idle_pedrinho;
@@ -47,12 +48,21 @@ switch(state){
 		}//Moving
 		else if (_right || _left){
 			state = "moving"
-		}
+		}//Dashing
+		else if (_dash && can_dash = true){
+			can_dash = false;
+			alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
+			state = "dash";
+			sprite_index = 0;
 		
+		}
 		
 		break;
 	}
 	
+	#endregion
+	
+	#region moving
 	case "moving":
 	{
 		//Moving state behavior
@@ -73,12 +83,20 @@ switch(state){
 			state = "attacking";
 			velh = 0;
 			image_index = 0;
+		}//Dashing
+		else if (_dash && can_dash = true){
+			can_dash = false;
+			alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
+			state = "dash";
+			sprite_index = 0;
 		}
-		
 		
 		break;
 	}
+	
+	#endregion
 
+	#region jumping
 	case "jumping":
 	{
 		//Falling
@@ -102,7 +120,9 @@ switch(state){
 		
 		break;
 	}
+	#endregion
 	
+	#region attack
 	case "attacking":
 	{
 		velh = 0;
@@ -121,13 +141,40 @@ switch(state){
 			if(image_index > image_number - 1){
 				state = "stopped";
 				new_attack = true;
+			}
+			
+			//Switch to dash 
+			if (_dash && can_dash = true){
+				can_dash = false;
+				alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
+				state = "dash"
+				sprite_index = 0
+				if(damage){
+					instance_destroy(damage, false);
+					damage = noone;
+				}
 
-				//Destroying the damage instance
-				
-				
 			}
 		
 		break;
 	}
-
+	#endregion
+	
+	#region dash
+	case "dash":
+	{
+		sprite_index = spr_dash_pedrinho;
+		velh = image_xscale * dash_vel;
+		
+		//Swtich state condition
+		if(image_index >= image_number - 1){
+			state = "stopped";
+		
+		}
+	
+		break;
+	}
+	
+	#endregion
+	
 }
