@@ -11,7 +11,7 @@ event_inherited();
 max_life = 10;
 current_life = max_life;
 
-max_velh = 3.5;
+max_velh = 4.5;
 max_velv = 8.5;
 
 dash_vel = 8;
@@ -23,4 +23,3 @@ damage = noone;
 
 new_attack = true;
 
-my_timer = 2000000;

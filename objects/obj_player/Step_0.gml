@@ -88,7 +88,7 @@ switch(state){
 			can_dash = false;
 			alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
 			state = "dash";
-			sprite_index = 0;
+			image_index = 0;
 		}
 		
 		break;
@@ -130,17 +130,18 @@ switch(state){
 		sprite_index = spr_attack_pedrinho;
 		
 			//Creating the damage object
-			if(image_index >= 1 && new_attack){
+			if(image_index >= 1 && new_attack = true){
 				damage = instance_create_layer(x + sprite_width /2, (y - sprite_height/2 - 8), layer, obj_pedrinho_damage);
 				damage.damage = attack;
 				damage.father = id;
 				damage.dir = image_xscale;
 				new_attack = false;
+				alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
 			}
 			
 			if(image_index > image_number - 1){
-				state = "stopped";
 				new_attack = true;
+				state = "stopped";
 			}
 			
 			//Switch to dash 
@@ -148,11 +149,7 @@ switch(state){
 				can_dash = false;
 				alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
 				state = "dash"
-				sprite_index = 0
-				if(damage){
-					instance_destroy(damage, false);
-					damage = noone;
-				}
+				image_index = 0
 
 			}
 		
