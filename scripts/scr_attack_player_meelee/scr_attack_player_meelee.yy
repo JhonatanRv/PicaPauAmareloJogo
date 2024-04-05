@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_attack_player_meelee",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_attack_player_meelee",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

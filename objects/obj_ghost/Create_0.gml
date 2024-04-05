@@ -13,3 +13,5 @@ max_velv = 1;
 show_state = false;
 
 mass = 0.5;
+
+state_timer = 0;

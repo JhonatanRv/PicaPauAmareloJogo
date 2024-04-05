@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Initializing variables
-var _right, _left, _jump, _attack, _dash;
+var _right, _left, _jump, _attack, _dash, _reset;
 var _ground = place_meeting(x, y + 1, obj_block);
 
 
@@ -25,7 +25,7 @@ if(!_ground && velv < max_velv * 2){
 //Starting the state machine
 switch(state){
 
-	#region stopped
+	#region Stopped
 	case "stopped":
 	{
 		sprite_index = spr_idle_pedrinho;
@@ -62,7 +62,7 @@ switch(state){
 	
 	#endregion
 	
-	#region moving
+	#region Moving
 	case "moving":
 	{
 		//Moving state behavior
@@ -96,7 +96,7 @@ switch(state){
 	
 	#endregion
 
-	#region jumping
+	#region Jumping
 	case "jumping":
 	{
 		//Falling
@@ -122,7 +122,7 @@ switch(state){
 	}
 	#endregion
 	
-	#region attack
+	#region Attack
 	case "attacking":
 	{
 		velh = 0;
@@ -138,7 +138,7 @@ switch(state){
 				new_attack = false;
 				alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
 			}
-			
+			//Switch to stopped
 			if(image_index > image_number - 1){
 				new_attack = true;
 				state = "stopped";
@@ -150,17 +150,26 @@ switch(state){
 				alarm[0] = 0.8 * game_get_speed(gamespeed_fps);
 				state = "dash"
 				image_index = 0
-
+			}
+			//Switch to jump if the player fall for some reason
+			if(velv != 0){
+				state = "jumping";
+				image_index = 0;		
 			}
 		
 		break;
 	}
 	#endregion
 	
-	#region dash
+	#region Dash
 	case "dash":
 	{
-		sprite_index = spr_dash_pedrinho;
+		
+		if(sprite_index != spr_dash_pedrinho){
+			sprite_index = spr_dash_pedrinho;
+			image_index = 0;
+		}
+			
 		velh = image_xscale * dash_vel;
 		
 		//Swtich state condition
@@ -174,4 +183,69 @@ switch(state){
 	
 	#endregion
 	
+	#region Hit
+	case "hit":{
+		
+		if(sprite_index != spr_hit_pedrinho){
+			sprite_index = spr_hit_pedrinho;
+			image_index = 0;
+		}
+		
+		//Cheking if the player died
+		if(current_life > 0){
+			if(image_index >= image_number - 1){
+				state = "stopped";
+			}
+		}
+		else{
+			if(image_index >= image_number - 1){
+				state = "dead"
+			
+			}
+		
+		
+		}
+		
+		//Stunning the player
+		velh = 0;
+		
+		
+	
+		break;
+	}
+	
+	#endregion
+	
+	#region Dead
+	case "dead":
+	{
+		velh = 0;
+		if(sprite_index != spr_dead_pedrinho){
+			image_index = 0;
+			sprite_index = spr_dead_pedrinho
+		}
+		
+		//Stopping the dead animation at the final sprite
+		/*if(image_index > image_number - 1){
+			image_speed = 0;
+		
+		}*/
+	
+	
+		break;
+	}
+	
+	#endregion
+	
+	//Default state
+	default:{
+		state = "stopped";
+	
+	}
+}
+
+//Resetting the room
+_reset = keyboard_check_pressed(vk_enter);
+if(_reset){
+	room_restart();
 }

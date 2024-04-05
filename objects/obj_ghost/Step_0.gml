@@ -10,8 +10,12 @@ if(!_ground){
 
 switch(state){
 
+	#region Stopped
 	case "stopped":
 	{
+		velh = 0;
+		state_timer++;
+		
 		if(sprite_index != spr_idle_ghost){
 
 			image_index = 0;
@@ -19,18 +23,46 @@ switch(state){
 		
 		sprite_index = spr_idle_ghost;
 		
-		//swtich state condition
-		if(keyboard_check(ord("L"))){
-			state = "hit";
-			
+		//Switch to patrol mode
+		if(irandom(state_timer) > 300 ){
+			state = choose("walk", "stopped", "walk");
+			state_timer = 0;
 		}
 		
 		break;
 	}
-
+	#endregion
+	
+	#region Walking
+	case "walk":
+	{	
+		state_timer++;
+		
+		if(sprite_index != spr_walk_ghost){
+			image_index = 0
+			velh = choose(1,-1);
+		
+		}
+		sprite_index = spr_walk_ghost;
+		
+		//Condition to switch states
+		if(irandom(state_timer) > 300){
+			state = choose("stopped", "stopped", "walk");
+			state_timer = 0;
+			
+		}
+	
+	
+		break;
+	}
+	
+	
+	#endregion
+	
+	#region Hit
 	case "hit":
 	{
-		
+		velh = 0;
 		if(sprite_index != spr_hurt_ghost){
 
 			image_index = 0;
@@ -53,7 +85,9 @@ switch(state){
 	
 		break;
 	}
+	#endregion
 	
+	#region Dead
 	case "dead":
 	{
 		if(sprite_index != spr_dead_ghost){
@@ -74,7 +108,7 @@ switch(state){
 	
 		break;
 	}
-
+	#endregion
 
 }
 
