@@ -1,4 +1,4 @@
-/// @description Player modified variables
+/// @description Pedrinho modified variables
 // You can write your code in this editor
 
 randomize();

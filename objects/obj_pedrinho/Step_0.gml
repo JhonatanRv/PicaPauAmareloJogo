@@ -1,4 +1,4 @@
-/// @description Player core code
+/// @description Pedrinho core code
 // You can write your code in this editor
 
 // Initializing variables

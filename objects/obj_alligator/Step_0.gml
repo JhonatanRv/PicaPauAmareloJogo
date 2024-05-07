@@ -30,7 +30,7 @@ switch(state){
 			state_timer = 0;
 		}
 		//Switch to attack state
-		scr_attack_player_meelee(obj_player, distance, xscale);
+		scr_attack_player_meelee(obj_player_father, distance, xscale);
 		
 		break;
 	}
@@ -55,7 +55,7 @@ switch(state){
 		}
 		
 		//Switch to attack state
-		scr_attack_player_meelee(obj_player, distance, xscale);
+		scr_attack_player_meelee(obj_player_father, distance, xscale);
 	
 		break;
 	}
@@ -79,7 +79,7 @@ switch(state){
 	
 		//creating the damage
 		if(image_index >= 2 && damage == noone && image_index < 4 && new_attack){
-			damage = instance_create_layer(x + sprite_width /2, (y - sprite_height/2 - 8), layer, obj_meelee_damage);
+			damage = instance_create_layer(x + sprite_width /2, (y - sprite_height/2 - 8), layer, obj_meelee_damage_father);
 			damage.damage = attack;
 			damage.father = id;
 			new_attack = false;

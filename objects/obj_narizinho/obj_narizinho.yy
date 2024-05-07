@@ -1,21 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player",
+  "%Name":"obj_narizinho",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_player",
+  "name":"obj_narizinho",
   "overriddenProperties":[],
   "parent":{
     "name":"Player",
     "path":"folders/Objects/Player.yy",
   },
   "parentObjectId":{
-    "name":"obj_entity",
-    "path":"objects/obj_entity/obj_entity.yy",
+    "name":"obj_player_father",
+    "path":"objects/obj_player_father/obj_player_father.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,12 +35,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_idle_pedrinho",
-    "path":"sprites/spr_idle_pedrinho/spr_idle_pedrinho.yy",
+    "name":"spr_idle_narizinho",
+    "path":"sprites/spr_idle_narizinho/spr_idle_narizinho.yy",
   },
   "spriteMaskId":{
-    "name":"spr_base_pedrinho",
-    "path":"sprites/spr_base_pedrinho/spr_base_pedrinho.yy",
+    "name":"spr_base_narizinho",
+    "path":"sprites/spr_base_narizinho/spr_base_narizinho.yy",
   },
   "visible":true,
 }
