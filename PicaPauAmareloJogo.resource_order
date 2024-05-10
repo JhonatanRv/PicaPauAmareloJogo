@@ -1,0 +1,23 @@
+{
+  "FolderOrderSettings":[
+    {"name":"Camera","order":4,"path":"folders/Objects/Camera.yy",},
+    {"name":"Damages","order":3,"path":"folders/Objects/Damages.yy",},
+    {"name":"Player","order":1,"path":"folders/Objects/Player.yy",},
+    {"name":"Tiles","order":2,"path":"folders/Objects/Tiles.yy",},
+    {"name":"air","order":4,"path":"folders/Sprites/Narizinho/air.yy",},
+    {"name":"attack","order":2,"path":"folders/Sprites/Narizinho/attack.yy",},
+    {"name":"moving","order":3,"path":"folders/Sprites/Narizinho/moving.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_entity","order":5,"path":"objects/obj_entity/obj_entity.yy",},
+    {"name":"obj_meelee_damage_large","order":1,"path":"objects/obj_meelee_damage_large/obj_meelee_damage_large.yy",},
+    {"name":"obj_narizinho","order":1,"path":"objects/obj_narizinho/obj_narizinho.yy",},
+    {"name":"obj_player_father","order":2,"path":"objects/obj_player_father/obj_player_father.yy",},
+    {"name":"spr_attack_narizinho2","order":2,"path":"sprites/spr_attack_narizinho2/spr_attack_narizinho2.yy",},
+    {"name":"spr_attack_narizinho3","order":1,"path":"sprites/spr_attack_narizinho3/spr_attack_narizinho3.yy",},
+    {"name":"spr_base_narizinho","order":1,"path":"sprites/spr_base_narizinho/spr_base_narizinho.yy",},
+    {"name":"spr_damage2","order":1,"path":"sprites/spr_damage2/spr_damage2.yy",},
+    {"name":"spr_fall_narizinho","order":2,"path":"sprites/spr_fall_narizinho/spr_fall_narizinho.yy",},
+    {"name":"spr_jump_narizinho","order":1,"path":"sprites/spr_jump_narizinho/spr_jump_narizinho.yy",},
+  ],
+}
