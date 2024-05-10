@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pedrinho",
+  "%Name":"obj_meelee_damage",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_pedrinho",
+  "name":"obj_meelee_damage",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_player_father",
-    "path":"objects/obj_player_father/obj_player_father.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,12 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_idle_pedrinho",
-    "path":"sprites/spr_idle_pedrinho/spr_idle_pedrinho.yy",
+    "name":"spr_damage",
+    "path":"sprites/spr_damage/spr_damage.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_base_pedrinho",
-    "path":"sprites/spr_base_pedrinho/spr_base_pedrinho.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }
