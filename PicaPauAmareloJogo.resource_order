@@ -4,8 +4,11 @@
     {"name":"Damages","order":3,"path":"folders/Objects/Damages.yy",},
     {"name":"Player","order":1,"path":"folders/Objects/Player.yy",},
     {"name":"Tiles","order":2,"path":"folders/Objects/Tiles.yy",},
+    {"name":"Dead","order":7,"path":"folders/Sprites/Narizinho/Dead.yy",},
     {"name":"air","order":4,"path":"folders/Sprites/Narizinho/air.yy",},
     {"name":"attack","order":2,"path":"folders/Sprites/Narizinho/attack.yy",},
+    {"name":"Damage","order":6,"path":"folders/Sprites/Narizinho/Damage.yy",},
+    {"name":"Dash","order":5,"path":"folders/Sprites/Narizinho/Dash.yy",},
     {"name":"moving","order":3,"path":"folders/Sprites/Narizinho/moving.yy",},
   ],
   "ResourceOrderSettings":[

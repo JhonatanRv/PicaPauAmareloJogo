@@ -271,7 +271,12 @@ switch(state){
 			image_index = 0;
 		}
 			
-		velh = image_xscale * dash_vel;
+		if(velh == 0){
+			velh = image_xscale * dash_vel;
+		}
+		else{
+			velh = (_right - _left) * dash_vel;
+			}
 		
 		//Swtich state condition
 		if(image_index >= image_number - 1){
