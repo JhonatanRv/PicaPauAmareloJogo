@@ -37,6 +37,7 @@ switch(state){
 	case "stopped":
 	{
 		sprite_index = sprite_idle;
+		max_velh = 4.5;
 		
 		//Switch state condition
 		//Ansuring that character doesn't move if both buttons are pressed
