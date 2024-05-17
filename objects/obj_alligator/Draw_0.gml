@@ -6,4 +6,4 @@ event_inherited();
 
 //Drawing a line to see if the distance is ok 
 
-draw_line(x, y - sprite_height/2, x + (distance * xscale), y - sprite_height/2);
+//draw_line(x, y - sprite_height/2, x + (distance * xscale), y - sprite_height/2);
