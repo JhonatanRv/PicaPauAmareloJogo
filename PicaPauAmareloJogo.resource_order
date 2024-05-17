@@ -16,6 +16,7 @@
     {"name":"Pedrinho","order":3,"path":"folders/Sprites/Pedrinho.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"bush1","order":6,"path":"objects/bush1/bush1.yy",},
     {"name":"obj_entity","order":5,"path":"objects/obj_entity/obj_entity.yy",},
     {"name":"obj_meelee_damage_large","order":1,"path":"objects/obj_meelee_damage_large/obj_meelee_damage_large.yy",},
     {"name":"obj_narizinho","order":1,"path":"objects/obj_narizinho/obj_narizinho.yy",},
@@ -25,11 +26,13 @@
     {"name":"obj_platform_s","order":4,"path":"objects/obj_platform_s/obj_platform_s.yy",},
     {"name":"obj_player_father","order":2,"path":"objects/obj_player_father/obj_player_father.yy",},
     {"name":"tree1","order":5,"path":"objects/tree1/tree1.yy",},
+    {"name":"tree2","order":7,"path":"objects/tree2/tree2.yy",},
     {"name":"_2","order":1,"path":"sprites/_2/_2.yy",},
     {"name":"_3","order":2,"path":"sprites/_3/_3.yy",},
     {"name":"_4","order":3,"path":"sprites/_4/_4.yy",},
     {"name":"_5","order":4,"path":"sprites/_5/_5.yy",},
     {"name":"_6","order":5,"path":"sprites/_6/_6.yy",},
+    {"name":"bush_1","order":9,"path":"sprites/bush_1/bush_1.yy",},
     {"name":"ceu","order":6,"path":"sprites/ceu/ceu.yy",},
     {"name":"spr_attack_narizinho2","order":2,"path":"sprites/spr_attack_narizinho2/spr_attack_narizinho2.yy",},
     {"name":"spr_attack_narizinho3","order":1,"path":"sprites/spr_attack_narizinho3/spr_attack_narizinho3.yy",},
@@ -44,5 +47,6 @@
     {"name":"spr_rplatform","order":7,"path":"sprites/spr_rplatform/spr_rplatform.yy",},
     {"name":"spr_splatform","order":4,"path":"sprites/spr_splatform/spr_splatform.yy",},
     {"name":"tree_1","order":8,"path":"sprites/tree_1/tree_1.yy",},
+    {"name":"tree_2","order":10,"path":"sprites/tree_2/tree_2.yy",},
   ],
 }
