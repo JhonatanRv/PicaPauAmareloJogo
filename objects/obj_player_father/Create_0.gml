@@ -12,6 +12,9 @@ current_life = max_life;
 max_velh = 4.5;
 max_velv = 8.5;
 
+can_switch = false;
+		alarm[1] = 3 * game_get_speed(gamespeed_fps);
+		
 dash_vel = 1;
 can_dash = true
 

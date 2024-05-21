@@ -38,7 +38,7 @@ switch(state){
 	{
 		sprite_index = sprite_idle;
 		max_velh = 4.5;
-		
+
 		//Switch state condition
 		//Ansuring that character doesn't move if both buttons are pressed
 		if (_right && _left ){
@@ -64,7 +64,8 @@ switch(state){
 			state = "dash";
 			image_index = 0;
 		}//switching
-		else if (_switch) {
+		else if (_switch && can_switch) {
+			can_switch = false;
 			state = "switch";
 			image_index = 0;
 		}
@@ -102,7 +103,8 @@ switch(state){
 			state = "dash";
 			image_index = 0;
 		}//switching
-		else if (_switch) {
+		else if (_switch && can_switch) {
+			can_switch = false;
 			state = "switch";
 			image_index = 0;
 		}
